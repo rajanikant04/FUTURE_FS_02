@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
-import { X, Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import { X, Eye, EyeOff, Mail, Lock } from 'lucide-react';
 
-interface LoginPageProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSwitchToSignup: () => void;
-}
-
-const LoginPage: React.FC<LoginPageProps> = ({ isOpen, onClose, onSwitchToSignup }) => {
+const LoginPage = ({ isOpen, onClose, onSwitchToSignup }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {
@@ -25,7 +19,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isOpen, onClose, onSwitchToSignup
   };
 
   const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
+    const newErrors = {};
 
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
@@ -43,7 +37,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ isOpen, onClose, onSwitchToSignup
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 

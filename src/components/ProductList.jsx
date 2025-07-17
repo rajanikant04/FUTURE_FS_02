@@ -1,12 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-import { Product } from '../types';
 
-interface ProductListProps {
-  products: Product[];
-}
-
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList = ({ products }) => {
   if (products.length === 0) {
     return (
       <div className="text-center py-12">

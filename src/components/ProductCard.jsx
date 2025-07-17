@@ -1,13 +1,8 @@
 import React from 'react';
 import { Star, ShoppingCart } from 'lucide-react';
-import { Product } from '../types';
 import { useCart } from '../contexts/CartContext';
 
-interface ProductCardProps {
-  product: Product;
-}
-
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {

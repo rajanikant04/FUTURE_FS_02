@@ -1,16 +1,6 @@
 import React from 'react';
 
-interface FiltersProps {
-  categories: string[];
-  selectedCategory: string;
-  onCategoryChange: (category: string) => void;
-  priceRange: [number, number];
-  onPriceRangeChange: (range: [number, number]) => void;
-  sortBy: string;
-  onSortChange: (sort: string) => void;
-}
-
-const Filters: React.FC<FiltersProps> = ({
+const Filters = ({
   categories,
   selectedCategory,
   onCategoryChange,

@@ -1,11 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Star, Truck, Shield, CreditCard, ArrowRight } from 'lucide-react';
 
-interface HomePageProps {
-  onShopNowClick: () => void;
-}
-
-const HomePage: React.FC<HomePageProps> = ({ onShopNowClick }) => {
+const HomePage = ({ onShopNowClick }) => {
   const featuredCategories = [
     {
       name: 'Electronics',

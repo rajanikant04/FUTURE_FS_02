@@ -2,13 +2,7 @@ import React from 'react';
 import { X, Plus, Minus, Trash2 } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 
-interface CartProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onCheckoutClick: () => void;
-}
-
-const Cart: React.FC<CartProps> = ({ isOpen, onClose, onCheckoutClick }) => {
+const Cart = ({ isOpen, onClose, onCheckoutClick }) => {
   const { items, updateQuantity, removeFromCart, totalPrice, totalItems } = useCart();
 
   if (!isOpen) return null;

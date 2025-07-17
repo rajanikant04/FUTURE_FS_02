@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { X, Eye, EyeOff, Mail, Lock, User, Phone } from 'lucide-react';
 
-interface SignupPageProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSwitchToLogin: () => void;
-}
-
-const SignupPage: React.FC<SignupPageProps> = ({ isOpen, onClose, onSwitchToLogin }) => {
+const SignupPage = ({ isOpen, onClose, onSwitchToLogin }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -19,10 +13,10 @@ const SignupPage: React.FC<SignupPageProps> = ({ isOpen, onClose, onSwitchToLogi
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({ 
       ...prev, 
@@ -34,7 +28,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ isOpen, onClose, onSwitchToLogi
   };
 
   const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
+    const newErrors = {};
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
@@ -78,7 +72,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ isOpen, onClose, onSwitchToLogi
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
