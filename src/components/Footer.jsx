@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-pink-400">StyleHub</h3>
+            <h3 className="text-2xl font-bold text-pink-400">Snitch</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your premier fashion destination. Discover the latest trends and express your unique style with our curated collection of clothing and accessories.
             </p>
@@ -69,7 +69,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-pink-400 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">support@stylehub.com</span>
+                <span className="text-gray-300 text-sm">support@snitch.com</span>
               </div>
             </div>
             
@@ -125,7 +125,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2025 StyleHub. All rights reserved.
+              © 2025 Snitch. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
