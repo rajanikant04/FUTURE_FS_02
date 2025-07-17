@@ -2,17 +2,7 @@ import React from 'react';
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 
-interface HeaderProps {
-  onCartClick: () => void;
-  searchQuery: string;
-  onSearchChange: (query: string) => void;
-  currentPage: 'home' | 'products';
-  onNavigate: (page: 'home' | 'products') => void;
-  onLoginClick: () => void;
-  onSignupClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ 
+const Header = ({ 
   onCartClick, 
   searchQuery, 
   onSearchChange, 

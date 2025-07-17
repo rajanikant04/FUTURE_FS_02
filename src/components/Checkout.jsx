@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { X, CreditCard, Check } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
-import { CheckoutForm } from '../types';
 
-interface CheckoutProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose }) => {
+const Checkout = ({ isOpen, onClose }) => {
   const { items, totalPrice, clearCart } = useCart();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState<CheckoutForm>({
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
@@ -20,10 +14,10 @@ const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose }) => {
     zipCode: '',
     paymentType: 'credit',
   });
-  const [errors, setErrors] = useState<Partial<CheckoutForm>>({});
+  const [errors, setErrors] = useState({});
 
-  const validateForm = (): boolean => {
-    const newErrors: Partial<CheckoutForm> = {};
+  const validateForm = () => {
+    const newErrors = {};
 
     if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
     if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
@@ -37,15 +31,15 @@ const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name as keyof CheckoutForm]) {
+    if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitted(true);

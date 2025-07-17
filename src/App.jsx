@@ -12,10 +12,10 @@ import Footer from './components/Footer';
 import { products } from './data/products';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'products'>('home');
+  const [currentPage, setCurrentPage] = useState('home');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 20000]);
+  const [priceRange, setPriceRange] = useState([0, 20000]);
   const [sortBy, setSortBy] = useState('name');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -29,7 +29,7 @@ function App() {
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    let filtered = products.filter(product => {
+    const filtered = products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            product.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = !selectedCategory || product.category === selectedCategory;
@@ -61,7 +61,7 @@ function App() {
     setIsCheckoutOpen(true);
   };
 
-  const handleNavigate = (page: 'home' | 'products') => {
+  const handleNavigate = (page) => {
     setCurrentPage(page);
     if (page === 'home') {
       setSearchQuery('');
