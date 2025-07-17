@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingCart, Search, User, Menu, X } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
+import Logo from './Logo';
 
 const Header = ({ 
   onCartClick, 
@@ -15,16 +16,22 @@ const Header = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-40 animate-slideInFromBottom">
+    <header className="bg-white/95 backdrop-blur-lg shadow-lg sticky top-0 z-40 animate-slideInFromBottom border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button 
               onClick={() => onNavigate('home')}
-              className="text-2xl font-bold text-pink-600 hover:text-pink-700 transition-all duration-300 transform hover:scale-105 animate-fadeInLeft"
+              className="flex items-center space-x-3 group transition-all duration-300 transform hover:scale-105 animate-fadeInLeft"
             >
-              Snitch
+              <Logo 
+                className="h-10 w-10 text-pink-600 group-hover:text-pink-700 transition-colors duration-300" 
+                fillColor="currentColor"
+              />
+              <span className="text-2xl font-bold text-pink-600 group-hover:text-pink-700 transition-colors duration-300 hidden sm:block">
+                Snitch
+              </span>
             </button>
           </div>
 
@@ -63,7 +70,7 @@ const Header = ({
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 disabled={currentPage === 'home'}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white/80 backdrop-blur-sm placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-pink-300"
                 placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
               />
             </div>
@@ -74,13 +81,13 @@ const Header = ({
             {/* Auth Buttons */}
             <button 
               onClick={onLoginClick}
-              className="px-4 py-2 text-gray-600 hover:text-pink-600 font-medium transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-2 text-gray-600 hover:text-pink-600 font-medium transition-all duration-300 transform hover:scale-105 rounded-lg hover:bg-pink-50"
             >
               Login
             </button>
             <button 
               onClick={onSignupClick}
-              className="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="px-6 py-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg hover:from-pink-700 hover:to-purple-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Sign Up
             </button>
@@ -168,7 +175,7 @@ const Header = ({
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
                   disabled={currentPage === 'home'}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg"
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white/80 backdrop-blur-sm placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-pink-300"
                   placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
                 />
               </div>
@@ -192,7 +199,7 @@ const Header = ({
                     onSignupClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg hover:from-pink-700 hover:to-purple-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Sign Up
                 </button>

@@ -44,35 +44,36 @@ const HomePage = ({ onShopNowClick }) => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
-        {/* Animated background elements */}
+        {/* Premium animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-bounce"></div>
-          <div className="absolute top-32 right-20 w-16 h-16 bg-pink-300 opacity-20 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-300 opacity-15 rounded-full animate-bounce animation-delay-300"></div>
-          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-indigo-300 opacity-10 rounded-full animate-pulse animation-delay-500"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-float"></div>
+          <div className="absolute top-32 right-20 w-16 h-16 bg-pink-300 opacity-20 rounded-full animate-luxuryPulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-300 opacity-15 rounded-full animate-float animate-delay-300"></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-indigo-300 opacity-10 rounded-full animate-luxuryPulse animate-delay-500"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-white/5 to-transparent rounded-full animate-float animate-delay-700"></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fadeInUp">
-              Welcome to <span className="text-pink-300 animate-pulse">Snitch</span>
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight animate-fadeInUp">
+              Welcome to <span className="text-shimmer animate-shimmer">Snitch</span>
             </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-purple-100 max-w-4xl mx-auto animate-fadeInUp animate-delay-200">
-              Discover the latest fashion trends and express your unique style with our curated collection of clothing and accessories.
+            <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-purple-100 max-w-4xl mx-auto animate-fadeInUp animate-delay-200 font-light leading-relaxed">
+              Discover the latest fashion trends and express your unique style with our curated collection of premium clothing and accessories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animate-delay-400">
               <button
                 onClick={onShopNowClick}
-                className="btn-primary flex items-center justify-center space-x-2 group animate-bounceIn animate-delay-500"
+                className="btn-primary flex items-center justify-center space-x-2 group animate-bounceIn animate-delay-500 hover-glow"
               >
                 <ShoppingBag className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Shop Fashion</span>
+                <span>Shop Premium Fashion</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
-              <button className="btn-secondary animate-bounceIn animate-delay-600">
+              <button className="btn-secondary animate-bounceIn animate-delay-600 hover-glow">
                 Style Guide
               </button>
             </div>
@@ -81,26 +82,27 @@ const HomePage = ({ onShopNowClick }) => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-50/50 to-purple-50/50"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fadeInUp">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Snitch?</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Your trusted fashion destination for authentic, trendy, and quality clothing.
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">Why Choose Snitch?</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+              Your trusted fashion destination for authentic, trendy, and premium quality clothing.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group animate-fadeInUp transform hover:scale-105 hover:-translate-y-2"
+                className="text-center p-8 card-luxury group animate-fadeInUp hover-lift"
                 style={{ animationDelay: `${(index + 1) * 200}ms` }}
               >
-                <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-pink-200 transition-colors duration-300 group-hover:rotate-6">
-                  <feature.icon className="h-8 w-8 text-pink-600 group-hover:scale-110 transition-transform duration-300" />
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:from-pink-200 group-hover:to-purple-200 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                  <feature.icon className="h-10 w-10 text-pink-600 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors duration-300">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -108,11 +110,12 @@ const HomePage = ({ onShopNowClick }) => {
       </section>
 
       {/* Featured Categories */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-pink-50/30 to-purple-50/30"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fadeInUp">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Shop by Category</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-gradient">Shop by Category</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
               Explore our carefully curated fashion collections for every style and occasion.
             </p>
           </div>
@@ -120,24 +123,24 @@ const HomePage = ({ onShopNowClick }) => {
             {featuredCategories.map((category, index) => (
               <div
                 key={index}
-                className="group cursor-pointer bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-rotate-1 animate-fadeInUp"
+                className="group cursor-pointer card-luxury hover-lift animate-fadeInUp"
                 style={{ animationDelay: `${(index + 1) * 150}ms` }}
                 onClick={onShopNowClick}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-t-2xl">
                   <img
                     src={category.image}
                     alt={category.name}
                     className="w-full h-48 sm:h-56 object-cover group-hover:scale-125 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                     <ArrowRight className="h-6 w-6 mx-auto animate-bounce" />
                   </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors duration-300">{category.name}</h3>
-                  <p className="text-gray-600 text-sm">{category.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{category.description}</p>
                 </div>
               </div>
             ))}
