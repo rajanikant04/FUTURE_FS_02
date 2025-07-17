@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, CreditCard, Shield, Truck } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   return (
@@ -9,21 +10,27 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-pink-400">Snitch</h3>
+            <div className="flex items-center space-x-3">
+              <Logo 
+                className="h-8 w-8 text-pink-400" 
+                fillColor="currentColor"
+              />
+              <h3 className="text-2xl font-bold text-pink-400">Snitch</h3>
+            </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Your premier fashion destination. Discover the latest trends and express your unique style with our curated collection of clothing and accessories.
+              Your premier fashion destination. Discover the latest trends and express your unique style with our curated collection of premium clothing and accessories.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 transform hover:scale-110">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 transform hover:scale-110">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 transform hover:scale-110">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors duration-200 transform hover:scale-110">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
