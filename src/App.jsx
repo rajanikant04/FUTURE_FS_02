@@ -89,7 +89,7 @@ function App() {
   return (
     <ThemeProvider>
       <CartProvider>
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header
           onCartClick={() => setIsCartOpen(true)}
           searchQuery={searchQuery}
@@ -121,11 +121,11 @@ function App() {
               {/* Main Content */}
               <div className="flex-1">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                     Products {filteredProducts.length > 0 && `(${filteredProducts.length})`}
                   </h2>
                   {searchQuery && (
-                    <p className="text-gray-600 mt-1">
+                    <p className="text-gray-600 dark:text-gray-400 mt-1">
                       Showing results for "{searchQuery}"
                     </p>
                   )}

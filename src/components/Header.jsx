@@ -28,10 +28,10 @@ const Header = ({
               className="flex items-center space-x-3 group transition-all duration-300 transform hover:scale-105 animate-fadeInLeft"
             >
               <Logo 
-                className="h-10 w-10 text-pink-600 group-hover:text-pink-700 transition-colors duration-300" 
+                className="h-10 w-10 text-gray-900 dark:text-gray-100 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300" 
                 fillColor="currentColor"
               />
-              <span className="text-2xl font-bold text-pink-600 group-hover:text-pink-700 transition-colors duration-300 hidden sm:block">
+              <span className="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 hidden sm:block">
                 Snitch
               </span>
             </button>
@@ -43,8 +43,8 @@ const Header = ({
               onClick={() => onNavigate('home')}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
                 currentPage === 'home'
-                  ? 'text-pink-600 bg-pink-50 dark:bg-pink-900/20 dark:text-pink-400 shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/20'
+                  ? 'text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 shadow-md'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800'
               }`}
             >
               <span>Home</span>
@@ -53,8 +53,8 @@ const Header = ({
               onClick={() => onNavigate('products')}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
                 currentPage === 'products'
-                  ? 'text-pink-600 bg-pink-50 dark:bg-pink-900/20 dark:text-pink-400 shadow-md'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/20'
+                  ? 'text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 shadow-md'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800'
               }`}
             >
               <span>Products</span>
@@ -72,7 +72,7 @@ const Header = ({
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 disabled={currentPage === 'home'}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg leading-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100 focus:outline-none focus:placeholder-gray-400 dark:focus:placeholder-gray-500 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-pink-300 dark:hover:border-pink-600"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg leading-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100 focus:outline-none focus:placeholder-gray-400 dark:focus:placeholder-gray-500 focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-gray-400 dark:hover:border-gray-500"
                 placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
               />
             </div>
@@ -83,7 +83,7 @@ const Header = ({
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-gray-600 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-400 transition-all duration-300 transform hover:scale-110 rounded-lg hover:bg-pink-50 dark:hover:bg-gray-800"
+              className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-300 transform hover:scale-110 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
             >
               {isDark ? (
@@ -96,13 +96,13 @@ const Header = ({
             {/* Auth Buttons */}
             <button 
               onClick={onLoginClick}
-              className="px-6 py-2 text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 font-medium transition-all duration-300 transform hover:scale-105 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900/20"
+              className="px-6 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-medium transition-all duration-300 transform hover:scale-105 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               Login
             </button>
             <button 
               onClick={onSignupClick}
-              className="px-6 py-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg hover:from-pink-700 hover:to-purple-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="px-6 py-2 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg hover:from-gray-800 hover:to-gray-600 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Sign Up
             </button>
@@ -110,11 +110,11 @@ const Header = ({
             {/* Cart Button */}
             <button
               onClick={onCartClick}
-              className="relative p-2 text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"
+              className="relative p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-300 transform hover:scale-110"
             >
               <ShoppingCart className="h-6 w-6" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium animate-bounce">
+                <span className="absolute -top-1 -right-1 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium animate-bounce">
                   {totalItems}
                 </span>
               )}
@@ -126,7 +126,7 @@ const Header = ({
             {/* Theme Toggle for Mobile */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-gray-600 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-400 transition-all duration-300 transform hover:scale-110 rounded-lg hover:bg-pink-50 dark:hover:bg-gray-800"
+              className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-300 transform hover:scale-110 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
               title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
             >
               {isDark ? (
@@ -139,11 +139,11 @@ const Header = ({
             {/* Cart Button for Mobile */}
             <button
               onClick={onCartClick}
-              className="relative p-2 text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"
+              className="relative p-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-300 transform hover:scale-110"
             >
               <ShoppingCart className="h-6 w-6" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium animate-bounce">
+                <span className="absolute -top-1 -right-1 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium animate-bounce">
                   {totalItems}
                 </span>
               )}
@@ -172,8 +172,8 @@ const Header = ({
                   }}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 text-left transform hover:scale-105 ${
                     currentPage === 'home'
-                      ? 'text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 border border-pink-200 dark:border-pink-800 shadow-md'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/20 border border-gray-300 dark:border-gray-600'
+                      ? 'text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600'
                   }`}
                 >
                   Home
@@ -185,8 +185,8 @@ const Header = ({
                   }}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 text-left transform hover:scale-105 ${
                     currentPage === 'products'
-                      ? 'text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 border border-pink-200 dark:border-pink-800 shadow-md'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/20 border border-gray-300 dark:border-gray-600'
+                      ? 'text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-600'
                   }`}
                 >
                   Products
@@ -203,7 +203,7 @@ const Header = ({
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
                   disabled={currentPage === 'home'}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg leading-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100 focus:outline-none focus:placeholder-gray-400 dark:focus:placeholder-gray-500 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-pink-300 dark:hover:border-pink-600"
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg leading-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-gray-100 focus:outline-none focus:placeholder-gray-400 dark:focus:placeholder-gray-500 focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 focus:shadow-lg hover:border-gray-400 dark:hover:border-gray-500"
                   placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
                 />
               </div>
@@ -215,7 +215,7 @@ const Header = ({
                     onLoginClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 font-medium transition-all duration-300 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:border-pink-300 dark:hover:border-pink-600 transform hover:scale-105"
+                  className="w-full px-4 py-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-medium transition-all duration-300 text-left border border-gray-300 dark:border-gray-600 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transform hover:scale-105"
                 >
                   <div className="flex items-center space-x-2">
                     <User className="h-5 w-5" />
@@ -227,7 +227,7 @@ const Header = ({
                     onSignupClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg hover:from-pink-700 hover:to-purple-700 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg hover:from-gray-800 hover:to-gray-600 font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Sign Up
                 </button>
