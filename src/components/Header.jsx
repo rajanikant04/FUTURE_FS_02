@@ -22,9 +22,9 @@ const Header = ({
           <div className="flex-shrink-0">
             <button 
               onClick={() => onNavigate('home')}
-              className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+              className="text-2xl font-bold text-pink-600 hover:text-pink-700 transition-colors"
             >
-              ShopZone
+              StyleHub
             </button>
           </div>
 
@@ -34,8 +34,8 @@ const Header = ({
               onClick={() => onNavigate('home')}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                 currentPage === 'home'
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-pink-600 bg-pink-50'
+                  : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50'
               }`}
             >
               <span>Home</span>
@@ -44,8 +44,8 @@ const Header = ({
               onClick={() => onNavigate('products')}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                 currentPage === 'products'
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-pink-600 bg-pink-50'
+                  : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50'
               }`}
             >
               <span>Products</span>
@@ -63,7 +63,7 @@ const Header = ({
                 value={searchQuery}
                 onChange={(e) => onSearchChange(e.target.value)}
                 disabled={currentPage === 'home'}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
                 placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
               />
             </div>
@@ -74,13 +74,13 @@ const Header = ({
             {/* Auth Buttons */}
             <button 
               onClick={onLoginClick}
-              className="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"
+              className="px-4 py-2 text-gray-600 hover:text-pink-600 font-medium transition-colors duration-200"
             >
               Login
             </button>
             <button 
               onClick={onSignupClick}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors duration-200"
+              className="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 font-medium transition-colors duration-200"
             >
               Sign Up
             </button>
@@ -137,8 +137,8 @@ const Header = ({
                   }}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 text-left ${
                     currentPage === 'home'
-                      ? 'text-blue-600 bg-blue-50 border border-blue-200'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50 border border-gray-300'
+                      ? 'text-pink-600 bg-pink-50 border border-pink-200'
+                      : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50 border border-gray-300'
                   }`}
                 >
                   Home
@@ -150,8 +150,8 @@ const Header = ({
                   }}
                   className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 text-left ${
                     currentPage === 'products'
-                      ? 'text-blue-600 bg-blue-50 border border-blue-200'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50 border border-gray-300'
+                      ? 'text-pink-600 bg-pink-50 border border-pink-200'
+                      : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50 border border-gray-300'
                   }`}
                 >
                   Products
@@ -168,7 +168,7 @@ const Header = ({
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
                   disabled={currentPage === 'home'}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200"
                   placeholder={currentPage === 'home' ? 'Go to Products to search...' : 'Search products...'}
                 />
               </div>
@@ -180,7 +180,7 @@ const Header = ({
                     onLoginClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-left border border-gray-300 rounded-lg hover:border-blue-300"
+                  className="w-full px-4 py-3 text-gray-600 hover:text-pink-600 font-medium transition-colors duration-200 text-left border border-gray-300 rounded-lg hover:border-pink-300"
                 >
                   <div className="flex items-center space-x-2">
                     <User className="h-5 w-5" />
@@ -192,7 +192,7 @@ const Header = ({
                     onSignupClick();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 font-medium transition-colors duration-200"
                 >
                   Sign Up
                 </button>
