@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CartProvider } from './contexts/CartContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import HomePage from './components/HomePage';
 import Header from './components/Header';
 import Filters from './components/Filters';
@@ -86,8 +87,9 @@ function App() {
   };
 
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-gray-50">
+    <ThemeProvider>
+      <CartProvider>
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <Header
           onCartClick={() => setIsCartOpen(true)}
           searchQuery={searchQuery}
@@ -166,6 +168,7 @@ function App() {
         <Footer />
       </div>
     </CartProvider>
+    </ThemeProvider>
   );
 }
 
